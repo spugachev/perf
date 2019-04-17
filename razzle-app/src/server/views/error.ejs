@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/head %>
+</head>
+
+<body>
+    <div>
+        <main>
+            <h1>
+                Server error:
+                <%= exp.message %>
+            </h1>
+            <p>
+                <a href="/">На главную</a>
+            </p>
+            <% if(process.env.NODE_ENV !== "production") { %>
+            <pre>
+                <%= exp.stack %>
+            </pre>
+            <% } %>
+        </main>
+    </div>
+</body>
+
+</html>
